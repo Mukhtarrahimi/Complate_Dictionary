@@ -32,3 +32,9 @@ def display_word(dic, word):
         )
     else:
         print("Word not found!")
+
+
+# Search a word
+def search_word(dic):
+    word = input("Enter the word to search: ").strip()
+    display_word(dic, word)
