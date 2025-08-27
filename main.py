@@ -46,3 +46,9 @@ def add_word(dic):
     if word in dic:
         print("This word already exists!")
         return
+    meaning = input("Meaning: ").strip()
+    example = input("Example: ").strip()
+    synonyms = input("Synonyms (comma separated): ").strip().split(",")
+    synonyms = [s.strip() for s in synonyms if s.strip()]
+    antonyms = input("Antonyms (comma separated): ").strip().split(",")
+    antonyms = [a.strip() for a in antonyms if a.strip()]
