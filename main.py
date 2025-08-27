@@ -34,7 +34,7 @@ def display_word(dic, word):
         print("Word not found!")
 
 
-# Search a word
+# Search a word-
 def search_word(dic):
     word = input("Enter the word to search: ").strip()
     display_word(dic, word)
@@ -52,7 +52,7 @@ def add_word(dic):
     synonyms = [s.strip() for s in synonyms if s.strip()]
     antonyms = input("Antonyms (comma separated): ").strip().split(",")
     antonyms = [a.strip() for a in antonyms if a.strip()]
-
+    # 
     dic[word] = {
         "meaning": meaning,
         "example": example,
