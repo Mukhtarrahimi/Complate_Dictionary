@@ -38,3 +38,11 @@ def display_word(dic, word):
 def search_word(dic):
     word = input("Enter the word to search: ").strip()
     display_word(dic, word)
+
+
+# Add a new word
+def add_word(dic):
+    word = input("New word: ").strip()
+    if word in dic:
+        print("This word already exists!")
+        return
