@@ -10,3 +10,9 @@ def load_dictionary():
         with open(FILE_NAME, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
+
+
+# Save dictionary to file
+def save_dictionary(dic):
+    with open(FILE_NAME, "w", encoding="utf-8") as f:
+        json.dump(dic, f, ensure_ascii=False, indent=4)
