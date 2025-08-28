@@ -137,3 +137,6 @@ def main_menu():
                     display_word(dictionary, w)
             else:
                 print("Dictionary is empty.")
+
+if __name__ == "__main__":
+    main_menu()
