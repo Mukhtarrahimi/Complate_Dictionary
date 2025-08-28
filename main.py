@@ -105,3 +105,12 @@ def delete_word(dic):
 # Main menu
 def main_menu():
     dictionary = load_dictionary()
+
+    while True:
+        print("\n--- Python Dictionary ---")
+        print("1. Search word")
+        print("2. Add new word")
+        print("3. Edit word")
+        print("4. Delete word")
+        print("5. Show all words")
+        print("6. Exit")
