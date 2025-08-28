@@ -86,3 +86,7 @@ def edit_word(dic):
 
     save_dictionary(dic)
     print("Word updated successfully!")
+
+
+def delete_word(dic):
+    word = input("Enter the word to delete: ").strip()
