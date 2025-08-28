@@ -125,3 +125,9 @@ def main_menu():
             edit_word(dictionary)
         elif choice == "4":
             delete_word(dictionary)
+        elif choice == "5":
+            if dictionary:
+                for w in dictionary:
+                    display_word(dictionary, w)
+            else:
+                print("Dictionary is empty.")
