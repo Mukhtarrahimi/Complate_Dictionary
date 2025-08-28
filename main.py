@@ -52,7 +52,7 @@ def add_word(dic):
     synonyms = [s.strip() for s in synonyms if s.strip()]
     antonyms = input("Antonyms (comma separated): ").strip().split(",")
     antonyms = [a.strip() for a in antonyms if a.strip()]
-    # 
+    #
     dic[word] = {
         "meaning": meaning,
         "example": example,
@@ -61,3 +61,11 @@ def add_word(dic):
     }
     save_dictionary(dic)
     print("Word added successfully!")
+
+
+# Edit an existing word
+def edit_word(dic):
+    word = input("Enter the word to edit: ").strip()
+    if word not in dic:
+        print("This word does not exist!")
+        return
