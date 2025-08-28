@@ -100,3 +100,8 @@ def delete_word(dic):
             print("Word deleted successfully!")
     else:
         print("Word not found!")
+
+
+# Main menu
+def main_menu():
+    dictionary = load_dictionary()
