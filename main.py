@@ -121,3 +121,7 @@ def main_menu():
             search_word(dictionary)
         elif choice == "2":
             add_word(dictionary)
+        elif choice == "3":
+            edit_word(dictionary)
+        elif choice == "4":
+            delete_word(dictionary)
