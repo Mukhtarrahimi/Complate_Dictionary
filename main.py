@@ -90,3 +90,13 @@ def edit_word(dic):
 
 def delete_word(dic):
     word = input("Enter the word to delete: ").strip()
+    if word in dic:
+        confirm = (
+            input(f"Are you sure you want to delete '{word}'? (y/n): ").strip().lower()
+        )
+        if confirm == "y":
+            del dic[word]
+            save_dictionary(dic)
+            print("Word deleted successfully!")
+    else:
+        print("Word not found!")
