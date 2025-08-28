@@ -74,3 +74,10 @@ def edit_word(dic):
     example = input(f"Example ({dic[word]['example']}): ").strip()
     synonyms = input(f"Synonyms ({', '.join(dic[word]['synonyms'])}): ").strip()
     antonyms = input(f"Antonyms ({', '.join(dic[word]['antonyms'])}): ").strip()
+
+    if meaning:
+        dic[word]["meaning"] = meaning
+    if example:
+        dic[word]["example"] = example
+    if synonyms:
+        dic[word]["synonyms"] = [s.strip() for s in synonyms.split(",") if s.strip()]
