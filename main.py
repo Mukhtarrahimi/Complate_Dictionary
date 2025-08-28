@@ -69,3 +69,8 @@ def edit_word(dic):
     if word not in dic:
         print("This word does not exist!")
         return
+    print("Press Enter to keep the current value.")
+    meaning = input(f"Meaning ({dic[word]['meaning']}): ").strip()
+    example = input(f"Example ({dic[word]['example']}): ").strip()
+    synonyms = input(f"Synonyms ({', '.join(dic[word]['synonyms'])}): ").strip()
+    antonyms = input(f"Antonyms ({', '.join(dic[word]['antonyms'])}): ").strip()
