@@ -81,3 +81,8 @@ def edit_word(dic):
         dic[word]["example"] = example
     if synonyms:
         dic[word]["synonyms"] = [s.strip() for s in synonyms.split(",") if s.strip()]
+    if antonyms:
+        dic[word]["antonyms"] = [a.strip() for a in antonyms.split(",") if a.strip()]
+
+    save_dictionary(dic)
+    print("Word updated successfully!")
