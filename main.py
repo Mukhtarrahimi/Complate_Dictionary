@@ -131,3 +131,9 @@ def main_menu():
                     display_word(dictionary, w)
             else:
                 print("Dictionary is empty.")
+        elif choice == "5":
+            if dictionary:
+                for w in dictionary:
+                    display_word(dictionary, w)
+            else:
+                print("Dictionary is empty.")
