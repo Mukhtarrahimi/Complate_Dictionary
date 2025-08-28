@@ -114,3 +114,10 @@ def main_menu():
         print("4. Delete word")
         print("5. Show all words")
         print("6. Exit")
+
+        choice = input("Your choice: ").strip()
+
+        if choice == "1":
+            search_word(dictionary)
+        elif choice == "2":
+            add_word(dictionary)
