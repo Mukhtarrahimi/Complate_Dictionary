@@ -31,7 +31,12 @@ def display_word(dic, word):
             f"Antonyms: {', '.join(dic[word]['antonyms']) if dic[word]['antonyms'] else 'None'}"
         )
     else:
-        print("Word not found!")
+        # جستجوی هوشمند
+        matches = get_close_matches(word, dic.keys(), n=3, cutoff=0.6)
+        if matches:
+            print(f"Word not found! Did you mean: {', '.join(matches)}?")
+        else:
+            print("Word not found!")
 
 
 # Search a word-
@@ -138,6 +143,6 @@ def main_menu():
             else:
                 print("Dictionary is empty.")
 
-# 
+#
 if __name__ == "__main__":
     main_menu()
