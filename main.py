@@ -47,23 +47,35 @@ def search_word(dic):
 
 
 # Add a new word
+
+
 def add_word(dic):
     word = input("New word: ").strip()
     if word in dic:
         print("This word already exists!")
         return
     meaning = input("Meaning: ").strip()
-    example = input("Example: ").strip()
+    examples = []
+    while True:
+        ex = input("Example (press Enter to stop): ").strip()
+        if not ex:
+            break
+        examples.append(ex)
     synonyms = input("Synonyms (comma separated): ").strip().split(",")
     synonyms = [s.strip() for s in synonyms if s.strip()]
     antonyms = input("Antonyms (comma separated): ").strip().split(",")
     antonyms = [a.strip() for a in antonyms if a.strip()]
-    #
+    category = input("Category: ").strip()
+    tags = input("Tags (comma separated): ").strip().split(",")
+    tags = [t.strip() for t in tags if t.strip()]
+
     dic[word] = {
         "meaning": meaning,
-        "example": example,
+        "examples": examples,
         "synonyms": synonyms,
         "antonyms": antonyms,
+        "category": category,
+        "tags": tags,
     }
     save_dictionary(dic)
     print("Word added successfully!")
