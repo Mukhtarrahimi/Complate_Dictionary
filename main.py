@@ -110,6 +110,9 @@ def delete_word(dic):
 def show_stats(dic):
     print(f"\nTotal words: {len(dic)}")
     categories = {}
+    for w in dic:
+        cat = dic[w].get("category", "Uncategorized")
+        categories[cat] = categories.get(cat, 0) + 1
 
 
 # Main menu
