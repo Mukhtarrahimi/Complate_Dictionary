@@ -124,6 +124,8 @@ def delete_word(dic):
         print("Word not found!")
 
 
+
+# show_stats
 def show_stats(dic):
     print(f"\nTotal words: {len(dic)}")
     categories = {}
@@ -135,6 +137,7 @@ def show_stats(dic):
         print(f"  {cat}: {count}")
 
 
+# main menu
 def main_menu():
     dictionary = load_dictionary()
     while True:
