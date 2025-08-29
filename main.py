@@ -114,6 +114,9 @@ def show_stats(dic):
         cat = dic[w].get("category", "Uncategorized")
         categories[cat] = categories.get(cat, 0) + 1
 
+        print("Words per category:")
+        for cat, count in categories.items():
+            print(f"  {cat}: {count}")
 
 # Main menu
 def main_menu():
