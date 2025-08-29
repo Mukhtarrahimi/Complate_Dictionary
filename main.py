@@ -87,37 +87,30 @@ def edit_word(dic):
     if word not in dic:
         print("This word does not exist!")
         return
-    print("Press Enter to keep the current value.")
-    meaning = input(f"Meaning ({dic[word]['meaning']}): ").strip()
-    example = input(f"Example ({dic[word]['example']}): ").strip()
-    synonyms = input(f"Synonyms ({', '.join(dic[word]['synonyms'])}): ").strip()
-    antonyms = input(f"Antonyms ({', '.join(dic[word]['antonyms'])}): ").strip()
+    data = dic[word]
+    print("Press Enter to keep current value.")
+    meaning = input(f"Meaning ({data['meaning']}): ").strip()
+    examples = input("Add more examples (comma separated, leave blank to skip): ").strip().split(",")
+    synonyms = input(f"Synonyms ({', '.join(data['synonyms'])}): ").strip()
+    antonyms = input(f"Antonyms ({', '.join(data['antonyms'])}): ").strip()
+    category = input(f"Category ({data['category']}): ").strip()
+    tags = input(f"Tags ({', '.join(data['tags'])}): ").strip()
 
     if meaning:
-        dic[word]["meaning"] = meaning
-    if example:
-        dic[word]["example"] = example
+        data["meaning"] = meaning
+    if examples and examples != ['']:
+        data["examples"].extend([ex.strip() for ex in examples if ex.strip()])
     if synonyms:
-        dic[word]["synonyms"] = [s.strip() for s in synonyms.split(",") if s.strip()]
+        data["synonyms"] = [s.strip() for s in synonyms.split(",") if s.strip()]
     if antonyms:
-        dic[word]["antonyms"] = [a.strip() for a in antonyms.split(",") if a.strip()]
+        data["antonyms"] = [a.strip() for a in antonyms.split(",") if a.strip()]
+    if category:
+        data["category"] = category
+    if tags:
+        data["tags"] = [t.strip() for t in tags.split(",") if t.strip()]
 
     save_dictionary(dic)
     print("Word updated successfully!")
-
-
-def delete_word(dic):
-    word = input("Enter the word to delete: ").strip()
-    if word in dic:
-        confirm = (
-            input(f"Are you sure you want to delete '{word}'? (y/n): ").strip().lower()
-        )
-        if confirm == "y":
-            del dic[word]
-            save_dictionary(dic)
-            print("Word deleted successfully!")
-    else:
-        print("Word not found!")
 
 
 def show_stats(dic):
